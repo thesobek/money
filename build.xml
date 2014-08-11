@@ -121,5 +121,17 @@
  <target name="phpdox" description="Generate API documentation using phpDox">
   <exec executable="${basedir}/build/tools/phpdox.phar" dir="${basedir}/build"/>
  </target>
+ 
+ <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
+<exec executable="${basedir}/build/tools/phpcb.phar">
+	<arg value="--log" />
+	<arg path="${basedir}/build/logs" />
+	<arg value="--source" />
+	<arg path="${basedir}/src" />
+	<arg value="--output" />
+	<arg path="${basedir}/build/code-browser" />
+</exec>
+</target>
+ 
 </project>
 
